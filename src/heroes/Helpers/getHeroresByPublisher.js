@@ -1,0 +1,14 @@
+import { heroes } from '../Data/heroes';
+
+//Funcion que trae los heroes segun su publisher (DC Comics, Marvel Comics)
+
+export const getHeroresByPublisher = (publisher) => {
+
+    const validPublisher = ['DC Comics', 'Marvel Comics'];
+
+    if (!validPublisher.includes(publisher)) {
+        throw new Error(`${publisher} is not a valid publisher`)
+    };
+
+    return heroes.filter(heroe => heroe.publisher === publisher);
+};
